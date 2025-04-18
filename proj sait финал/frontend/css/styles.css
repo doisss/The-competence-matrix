@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Общие стили для всех страниц */
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 24px;
+}
+
+header {
+    background-color: white;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+
+nav {
+    margin-right: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 auto;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.profile picture {
+    width: 300px;
+    height: auto;
+    display: block;
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.97);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.overlay-text {
+    text-align: center;
+    color: #333;
+}
+
+.skills-table {
+    font-size: 16px;
+}
+
+
+main {
+    text-align: center;
+}
+
+#wrapper {
+    margin: 344 auto 433px;
+    width: 399px;
+    display: flex;
+    align-items: center;
+}
+
+#footer {
+    display: flex;
+    align-items: center;
+}
+
+.all-symbols {
+    margin: 15px auto 15px;
+    display: block;
+}
+
+.symbol {
+    color: white;
+    margin-top: 10px;
+    margin-left: 65px;
+    margin-right: 60px;
+    height: 70px;
+}
+
+
+.btn-3 {
+    display: inline-block;
+    background: #34aebb;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.btn-2 {
+    display: inline-block;
+    background: #f26321;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.btn {
+    display: inline-block;
+    background: #8C959D;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+
+.upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #34aebb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-label i {
+  margin-right: 5px;
+}
+
+.upload-input {
+  display: none;
+}
+
+
+.custom-select select {
+  /* Стили для выпадающего списка */
+  width: 200px; /* Ширина списка */
+  padding: 10px; /* Отступы */
+  border: 1px solid #ccc; /* Граница */
+  border-radius: 5px; /* Закругленные углы */
+  font-size: 16px; /* Размер шрифта */
+  background-color: #fff; /* Цвет фона */
+  appearance: none; /* Убираем стрелку по умолчанию */
+}
+
+.custom-select select option {
+  /* Стили для опций */
+  padding: 5px; /* Отступы */
+  background-color: #f2f2f2; /* Цвет фона */
+}
+
+.custom-select select:focus {
+  /* Стили при фокусе */
+  outline: none; /* Убираем контур */
+  box-shadow: 0 0 5px #ccc; /* Добавляем тень */
+}
+
+
+
+/* Новые стили для кнопки обратной связи */
+.feedback-info {
+    display: none; /* Скрываем по умолчанию */
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-container {
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+}
+
+/* Стили для страницы авторизации */
+.auth-body {
+    background-color: #34aebb;
+    background: linear-gradient(to right, #79ccd4, #34aebb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.auth-container {
+    background-color: #8ae8f2;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.auth-container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.auth-container span {
+    font-size: 12px;
+}
+
+.auth-container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.auth-container button {
+    background-color: black;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.auth-container button.hidden {
+    background-color: transparent;
+    border-color: white;
+}
+
+.auth-container form {
+    background-color: #8ae8f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.auth-container input {
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.auth-container.active .sign-in {
+    transform: translateX(100%);
+}
+
+.sign-up {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.auth-container.active .sign-up {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons {
+    margin: 20px 0;
+}
+
+.social-icons a {
+    border: 1px solid black;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+}
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.auth-container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    background-color: #f26321;
+    height: 100%;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.auth-container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.auth-container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.auth-container.active .toggle-right {
+    transform: translateX(200%);
+}
+
+/* Дополнительные стили для кнопки обратной связи */
+.feedback-container .btn {
+    background-color: #5c6bc0;
+    color: white;
+}

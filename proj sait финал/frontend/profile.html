@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ваш профиль</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body onload="getStorege()">
+    <header>
+         <nav>
+          <ul>
+                <li><img src="images/Логотипчик.png" class="symbol" alt="ЮФУ"></li>
+                <li style="color: black">ПРОФИЛЬ</li>
+                <li><a href="index.html"><img src="images/Иконка дома.png" class="symbol" alt="ЮФУ"></a></li>
+                <li style="margin-left: -230px;"><a href="index.html" class="upload-label" onclick="Q()">Выйти</a></li>
+
+          </ul>
+        </nav>
+    </header>
+
+<main>
+ <div class="image-container">
+   <img src="images/Фон профиль.jpg" width="100%" height="100%">
+ 
+ <div class="overlay">
+   <div class="overlay-text">
+
+     <div class="profile-container">
+        <!-- Фото пользователя -->
+        <div class="profile-picture">
+            <img id="profile-photo" src="images/Фото профиля.jpg" alt="Фото пользователя">
+            <label for="upload-photo" class="upload-label">
+                <i class="fa fa-paperclip"></i> Изменить фото
+            </label>
+            <input type="file" id="upload-photo" class="upload-input" accept="image/*" onchange="changePhoto()">
+        </div>
+
+        <!-- Информация о пользователе -->
+        <div class="profile-info">
+            <h1 id="name"></h1>
+            <p>Email: <span id="email"></span></p>
+            Дата рождения: <span id="data"></span>
+
+            <!-- Плашка с уровнем и направлением -->
+            <div class="user-level">
+                <!--<p><strong>Уровень:</strong> Middle</p>-->
+                <!--<p><strong>Направление:</strong> Full Stack</p>-->
+            </div>
+        </div>
+   
+     <br>
+     <a href="work.html" class="btn-2" onclick="W()">Приступить к решениям задач</a>
+    </div>
+  </div>
+</div>
+
+<!-- Кнопка обратной связи -->
+<div class="feedback-container">
+  <button class="btn" onclick="toggleFeedback()">Обратная связь</button>
+</div>
+
+<!-- Скрытый блок с информацией -->
+<div class="feedback-info" id="feedback-info">
+  <p>Email для обратной связи: SkillGrade@mail.ru</p>
+  <p>Телефон: +7 (999) 999-99-99</p>
+</div>
+
+</main>
+
+<div id="footer">
+  <div class="all-symbols">
+    <a href="https://sfedu.ru/"><img src="images/Подвал юфу.jpeg" class="symbol" alt="ЮФУ"></a>
+    <a href="https://inostudio.com/contacts/"><img src="images/Подвал иностудия.jpg" class="symbol" alt="Иностудия"></a>
+    <a href="https://proictis.sfedu.ru"><img src="images/Подвал проектный офис.jpg" class="symbol" alt="Проектный Офис"></a>
+    <a href="https://ictis.sfedu.ru"><img src="images/Подвал иктиб.png" class="symbol" alt="ИКТИБ"></a>
+  </div>
+</div>
+
+<script src="js/profile.js"></script>
+
+<script>
+  function Q(){
+    localStorage.clear()
+  }
+  function W(){
+    alert('После выбора направления и уровня вам будет предоставлена задача с отведенным для нее временем, для выполнения задачи можно использовать различные ПО и онлайн сервисы, загрузка отчета производится на почту указанную после выполнения')
+  }
+    // Функция для показа/скрытия информации обратной связи
+    function toggleFeedback() {
+        const feedbackInfo = document.getElementById("feedback-info");
+        if (feedbackInfo.style.display === "block") {
+            feedbackInfo.style.display = "none";
+        } else {
+            feedbackInfo.style.display = "block";
+        }
+    }
+    
+    // Изменение фото профиля
+    function changePhoto() {
+        const input = document.getElementById('upload-photo');
+        const photo = document.getElementById('profile-photo');
+        const file = input.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                photo.src = e.target.result; // Устанавливаем новое фото
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function formatDate(dateString) {
+        // Преобразуем строку в объект Date
+        const date = new Date(dateString);
+
+        // Получаем компоненты даты
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Месяцы начинаются с 0
+        const day = String(date.getDate()).padStart(2, '0');
+
+        // Форматируем дату в нужный формат
+        return `${year}.${month}.${day}`;
+    }
+
+    function getStorege(){
+      const f= JSON.parse(localStorage.getItem('user_data'))
+      console.log(f)
+      const data=formatDate(f.dateOfBirth)
+      document.getElementById("data").innerText=data
+      document.getElementById("email").innerText=f.email
+      document.getElementById('name').innerText=f.name
+    }
+</script>
+
+</body>
+</html>
